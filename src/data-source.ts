@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
     password: "isca2025.",
     database: "invoces",
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [__dirname + "/entities/*.ts"],
     migrations: [],
     subscribers: [],

@@ -48,6 +48,6 @@ export class UserController {
         await this.userRepository.remove(userToRemove)
 
         return "user has been removed"
-    }
-*/
+    }*/
+
 }

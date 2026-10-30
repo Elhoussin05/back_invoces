@@ -1,6 +1,5 @@
-import { Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
 import { Transaccion } from "./Transaccion"
-
 
 @Entity()
 export class AgenteComercial {
@@ -8,8 +7,10 @@ export class AgenteComercial {
     @PrimaryGeneratedColumn()
     id: number
 
-    @OneToMany(() => Transaccion, (transaccion) => transaccion.agenteComercial)
-    transacciones: Transaccion[]
-        
+    @Column()
+    nom: string
+
+    @OneToMany(()=>Transaccion,(transaccion) => transaccion.agenteComercial)
+    transacciones:Transaccion[]
 
 }
