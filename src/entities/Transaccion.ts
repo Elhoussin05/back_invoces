@@ -2,6 +2,7 @@ import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, TableInh
 import { UnidadDeMedida } from "./UnidadDeMedida"
 import { Iva } from "./Iva"
 import { Producto } from "./Producto"
+import { AgenteComercial } from "./AgenteComercial"
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "tipoTransaccion" } })
@@ -44,6 +45,9 @@ export class Transaccion {
 
     @ManyToOne(() => Producto, (producto) => producto.transacciones)
     producto: Producto
+
+    @ManyToOne(() => AgenteComercial, (agenteComercial) => agenteComercial.transacciones)
+    agenteComercial: AgenteComercial
 
 
 }
