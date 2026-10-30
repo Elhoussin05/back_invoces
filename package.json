@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
    "name": "back-invoices",
-=======
-   "name": "back-invoces",
->>>>>>> c9356e7d9034ec781fe694c3848f8a30534b2b9c
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
