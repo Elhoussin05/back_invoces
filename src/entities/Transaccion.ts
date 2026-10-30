@@ -3,6 +3,7 @@ import { UnidadDeMedida } from "./UnidadDeMedida"
 import { Iva } from "./Iva"
 import { Producto } from "./Producto"
 import { AgenteComercial } from "./AgenteComercial"
+import { Documento } from "./Documento"
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "tipoTransaccion" } })
@@ -48,6 +49,9 @@ export class Transaccion {
 
     @ManyToOne(() => AgenteComercial, (agenteComercial) => agenteComercial.transacciones)
     agenteComercial: AgenteComercial
+
+    @ManyToOne(() => Documento, (documento) => documento.transacciones)
+    documento: Documento
 
 
 }
