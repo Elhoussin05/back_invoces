@@ -10,7 +10,7 @@ export class AgenteComercial {
     @Column()
     nom: string
 
-    @OneToMany(()=>Transaccion,(transaccion) => transaccion.agentecomercial)
+    @OneToMany(()=>Transaccion,(transaccion) => transaccion.agenteComercial)
     transacciones:Transaccion[]
 
 }
