@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn, TableInheritance } from "typeorm"
+import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, TableInheritance } from "typeorm"
 import { UnidadDeMedida } from "./UnidadDeMedida"
 import { Iva } from "./Iva"
+import { Producto } from "./Producto"
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "tipoTransaccion" } })
@@ -40,5 +41,9 @@ export class Transaccion {
 
     @Column()
     lote: String
+
+    @ManyToOne(() => Producto, (producto) => producto.transacciones)
+    producto: Producto
+
 
 }
